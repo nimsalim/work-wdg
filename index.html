@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Western Distribution Group</title>
 <meta name="description" content="Western Distribution Group LLC imports premium Jasmine rice and supplies it prepackaged to supermarkets, wholesalers, and retailers across the United States. Bronx, NY.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:title" content="Western Distribution Group LLC">
 <meta property="og:description" content="Premium Jasmine rice, imported and delivered prepackaged to supermarkets, wholesalers, and retailers nationwide.">
-<meta property="og:image" content="https://westerndistributiongroup.com/assets/og-logo.jpg">
+<meta property="og:image" content="https://westerndistributiongroup.com/og-logo.jpg">
 <meta property="og:url" content="https://westerndistributiongroup.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,6 +178,8 @@
     font-family: 'Source Sans 3', sans-serif; font-size: 0.93rem; border-radius: 2px;
   }
   form.quote textarea { min-height: 84px; resize: vertical; }
+  .form-note { margin: 0; font-size: 0.8rem; color: var(--muted); }
+  .form-note a { color: var(--gold-deep); }
   form.quote .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media (max-width: 480px) { form.quote .row2 { grid-template-columns: 1fr; } }
 
@@ -196,7 +198,7 @@
 <header class="top">
   <div class="wrap top-inner">
     <a href="#top" class="logo" aria-label="Western Distribution Group LLC — home">
-      <img src="assets/logo-horizontal.jpg" alt="Western Distribution Group LLC">
+      <img src="logo-horizontal.jpg" alt="Western Distribution Group LLC">
     </a>
     <nav class="primary">
       <a href="#product">Product</a>
@@ -212,7 +214,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="fade-up">
-        <span class="eyebrow">Bronx, NY · Port of NY &amp; NJ trade corridor</span>
+        <span class="eyebrow">Bronx, NY · Importing through the Port of NY &amp; NJ</span>
         <h1>Premium Jasmine rice, <em>imported and delivered</em> shelf-ready.</h1>
         <p class="lede">Western Distribution Group clears rice through U.S. Customs and moves it straight into our own warehousing and distribution network — supplying supermarkets, wholesalers, and retailers across the country, prepackaged and ready for shelf.</p>
         <div class="cta-row">
@@ -222,7 +224,7 @@
         <div class="tagline"><span>Quality Products</span><span>Global Reach</span><span>Stronger Tomorrow</span></div>
       </div>
       <div class="hero-visual fade-up">
-        <img class="photo" src="assets/container-loaded.jpg" alt="Container of prepackaged Jasmine rice bags arriving at the Bronx warehouse">
+        <img class="photo" src="container-loaded.jpg" alt="Container of prepackaged Jasmine rice bags arriving at the Bronx warehouse">
         <div class="manifest">
           <div class="lbl">Manifest</div>
           <dl>
@@ -240,8 +242,8 @@
   <section id="product">
     <div class="wrap product">
       <div class="product-photos">
-        <img class="bag" src="assets/bag-warehouse.jpg" alt="25 lb bag of Jasmine long grain rice stacked in the warehouse">
-        <img class="grain" src="assets/grain.jpg" alt="Handful of Hom Mali Jasmine rice grains">
+        <img class="bag" src="bag-warehouse.jpg" alt="25 lb bag of Jasmine long grain rice stacked in the warehouse">
+        <img class="grain" src="grain.jpg" alt="Handful of Hom Mali Jasmine rice grains">
       </div>
       <div>
         <div class="section-head">
@@ -279,7 +281,7 @@
         <div class="service">
           <span class="tag">Warehousing</span>
           <h3>Bronx-based storage</h3>
-          <p>Prepackaged rice is received, inspected, and staged at our Concord Ave facility, minutes from the NY/NJ port complex.</p>
+          <p>Prepackaged rice is received, inspected, and staged at our Concord Ave facility in the Bronx, with direct access to the interstate highway network.</p>
           <ul>
             <li>Receiving &amp; lot/inventory control</li>
             <li>Case &amp; pallet staging</li>
@@ -315,7 +317,7 @@
           <div class="lane-step"><h4>Supermarket / retailer</h4><p>Delivered interstate by pallet or case, with signed proof of delivery.</p></div>
         </div>
       </div>
-      <img src="assets/container-side.jpg" alt="Shipping container on a trailer outside the Bronx facility">
+      <img src="container-side.jpg" alt="Shipping container on a trailer outside the Bronx facility">
     </div>
   </section>
 
@@ -327,7 +329,7 @@
       </div>
       <div class="strip">
         <div><strong>Importer of record</strong>Registered with U.S. Customs &amp; Border Protection.</div>
-        <div><strong>Port proximity</strong>Facility within 15 minutes of Port of NY &amp; NJ.</div>
+        <div><strong>NYC-based</strong>Bronx facility with direct interstate highway access.</div>
         <div><strong>Prepackaged</strong>Sealed retail bags, ready to ship interstate.</div>
         <div><strong>Single contact</strong>One partner from port to shelf.</div>
       </div>
@@ -347,8 +349,7 @@
           <div class="contact-item"><span class="k">Email</span><span class="v"><a href="mailto:westerndistributiongroup@gmail.com">westerndistributiongroup@gmail.com</a></span></div>
           <div class="contact-item"><span class="k">Hours</span><span class="v">Mon – Fri, 8:00 AM – 6:00 PM ET</span></div>
         </div>
-        <form class="quote" action="mailto:westerndistributiongroup@gmail.com" method="get" enctype="text/plain">
-          <input type="hidden" name="subject" value="Quote request — westerndistributiongroup.com">
+        <form class="quote" id="quote-form">
           <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Full name"></div>
           <div class="row2">
             <div><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Company name"></div>
@@ -356,6 +357,7 @@
           </div>
           <div><label for="cargo">Order details</label><textarea id="cargo" name="body" placeholder="Package size, expected volume, delivery state, frequency..."></textarea></div>
           <button type="submit" class="btn primary" style="align-self: flex-start;">Send Request</button>
+          <p class="form-note">Opens your email app with the request pre-filled, or call <a href="tel:+19176530032">(917) 653-0032</a>.</p>
         </form>
       </div>
     </div>
@@ -365,10 +367,20 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <img src="assets/logo-horizontal.jpg" alt="">
+    <img src="logo-horizontal.jpg" alt="">
     <span>© 2026 Western Distribution Group LLC · 366 Concord Ave, Bronx, NY 10454</span>
   </div>
 </footer>
 
+<script>
+  document.getElementById('quote-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var body = 'Name: ' + v('name') + '\nCompany: ' + v('company') + '\nEmail: ' + v('email') + '\n\nOrder details:\n' + v('cargo');
+    window.location.href = 'mailto:westerndistributiongroup@gmail.com'
+      + '?subject=' + encodeURIComponent('Quote request — westerndistributiongroup.com')
+      + '&body=' + encodeURIComponent(body);
+  });
+</script>
 </body>
 </html>
